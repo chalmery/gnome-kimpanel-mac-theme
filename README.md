@@ -1,30 +1,23 @@
 # kimpanel macOS Theme
 
-macOS 风格候选框主题，覆盖 [gnome-shell-extension-kimpanel](https://github.com/wengxt/gnome-shell-extension-kimpanel)。
+主要是为了解决安装gnome-shell-extension-kimpanel插件后，只能有默认的黑色输入框，并且在fcitx5的配置页面设置啥样的主题都不生效，
+我把fcitx5-theme-macos的白色主题，让AI分析了主题的风格，让AI更新了这个插件的css配置，你也可以自己让AI写一个符合你需要的样子
 
-## 文件
+# AI分析出来的原因
+fcitx5 有两个 UI 模块在竞争渲染：
+模块	优先级	作用
+kimpanel	UIPriority=50	通过 DBus 把候选词数据发给 GNOME Shell，由 GNOME Shell 渲染
+classicui	UIPriority=0（默认）	fcitx5 自己渲染，使用 classicui.conf 中的 macOS 主题
+kimpanel 优先级 50 > classicui 的 0，所以 kimpanel 胜出。候选窗口现在是 GNOME Shell 用 stylesheet.css 渲染的，而不是 fcitx5 用 macOS 主题渲染的。
+那个 stylesheet.css 目前只有极简的默认样式，没有任何主题化。
+# 如何使用
 
-| 文件 | 作用 |
-|------|------|
-| `stylesheet.css` | macOS-light 主题 CSS |
-| `panel.png` | 面板背景素材（备用） |
-| `highlight.png` | 高亮背景素材（备用） |
-| `org.gnome.shell.extensions.kimpanel.gschema.xml` | GSettings schema（修复扩展加载失败） |
+下载内容，插件位置，我的在这里：~/.local/share/gnome-shell/extensions/kimpanel@kde.org/stylesheet.css
 
-## 使用
-
-先确保已安装原版 kimpanel 扩展，然后：
+覆盖原版内容，然后：
 
 ```bash
 ./install.sh
 ```
 
-注销重新登录。
-
-## 定制
-
-编辑 `stylesheet.css`：
-
-- 高亮色 → `.kimpanel-candidate-item:active` 的 `background-color`
-- 面板圆角 → `.popup-menu-content.kimpanel-popup-content` 的 `border-radius`
-- 间距 → `.kimpanel-candidate-item` 的 `padding` / `margin`
+重启电脑
