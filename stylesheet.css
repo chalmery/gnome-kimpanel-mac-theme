@@ -1,0 +1,57 @@
+/* macOS-light theme for kimpanel */
+
+.popup-menu-boxpointer.kimpanel-popup-boxpointer {
+  -arrow-background-color: transparent;
+  -arrow-border-color: transparent;
+}
+
+.popup-menu-content.kimpanel-popup-content {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+}
+
+.kimpanel-label {
+  font-family: "Sans";
+  font-weight: normal;
+  color: #000000;
+  padding: 0px;
+}
+
+/* Preedit text area */
+.kimpanel-label:not(.kimpanel-candidate-item) {
+  padding: 2px 6px;
+}
+
+/* Override GNOME Shell default popup-menu-item large padding */
+.kimpanel-candidate-item {
+  cursor: pointer;
+  transition-duration: 0ms;
+  border-radius: 4px;
+  margin: 0px;
+  padding: 2px 7px !important;
+}
+
+.kimpanel-candidate-item:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.kimpanel-candidate-item:active {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+.kimpanel-candidate-item:active:hover {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+.minwidth-zero {
+  min-width: 0;
+}
+
+.icon-disable {
+  color: rgba(150, 150, 150, 0.5);
+}
