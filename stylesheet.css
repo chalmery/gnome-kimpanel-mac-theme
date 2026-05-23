@@ -66,6 +66,8 @@
 .kimpanel-candidate-item:active {
   background-color: #007aff;
   color: #ffffff;
+  border: 0px;
+  box-shadow: none;
 }
 
 .kimpanel-candidate-item:active:hover {
