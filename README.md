@@ -1,6 +1,6 @@
 # kimpanel macOS Theme
 
-解决 [gnome-shell-extension-kimpanel](https://github.com/wengxt/gnome-shell-extension-kimpanel) 候选框只有默认黑色样式，且 fcitx5 主题配置不生效的问题。将候选框渲染为 macOS 风格白色主题。
+解决 [gnome-shell-extension-kimpanel](https://github.com/wengxt/gnome-shell-extension-kimpanel) 候选框只有默认黑色样式，且 fcitx5 主题配置不生效的问题。将候选框渲染为 macOS 风格白色主题(fcitx5-theme-macos)。
 
 ![screenshot](assets/image.png)
 
@@ -47,19 +47,5 @@ glib-compile-schemas ~/.local/share/glib-2.0/schemas/
 
    （文件管理器按 `Ctrl+H` 显示隐藏目录）
 
-以上三种方式只需覆盖以下文件，不会替换整个扩展：
 
-- `stylesheet.css` — 候选框样式
-- `panel.png` / `highlight.png` — 背景素材
-- `org.gnome.shell.extensions.kimpanel.gschema.xml` — GSettings schema（修复扩展加载失败）
-
-完成后注销重新登录。
-
-## 定制
-
-编辑 `stylesheet.css`，关键样式：
-
-- 选中高亮色 → `.kimpanel-candidate-item:active` 的 `background-color`
-- 面板圆角 → `.popup-menu-content.kimpanel-popup-content` 的 `border-radius`
-- 间距 → `.kimpanel-candidate-item` 的 `padding` / `margin`
-- 阴影 → `.popup-menu-content.kimpanel-popup-content` 的 `box-shadow`
+3. 完成后注销重新登录。
