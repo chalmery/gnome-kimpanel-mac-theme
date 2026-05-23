@@ -17,7 +17,9 @@ kimpanel 优先级更高，所以候选窗口实际由 GNOME Shell 的 `styleshe
 
 ## 安装
 
-先确保已安装 [kimpanel 扩展](https://github.com/wengxt/gnome-shell-extension-kimpanel)，然后：
+先确保已安装 [kimpanel 扩展](https://github.com/wengxt/gnome-shell-extension-kimpanel)。
+
+### 方式一：install.sh（推荐）
 
 ```bash
 git clone https://github.com/chalmery/gnome-kimpanel-mac-theme.git
@@ -25,19 +27,39 @@ cd gnome-kimpanel-mac-theme
 ./install.sh
 ```
 
-`install.sh` 只覆盖扩展目录（`~/.local/share/gnome-shell/extensions/kimpanel@kde.org/`）中的以下文件，不会替换整个扩展：
-
-- `stylesheet.css` — 候选框样式
-- `panel.png` / `highlight.png` — 背景素材
-- `org.gnome.shell.extensions.kimpanel.gschema.xml` — GSettings schema（修复扩展加载失败）
-
-也可以手动覆盖：
+### 方式二：手动 cp
 
 ```bash
 cp stylesheet.css panel.png highlight.png ~/.local/share/gnome-shell/extensions/kimpanel@kde.org/
 cp org.gnome.shell.extensions.kimpanel.gschema.xml ~/.local/share/glib-2.0/schemas/
 glib-compile-schemas ~/.local/share/glib-2.0/schemas/
 ```
+
+### 方式三：纯手动（不用终端）
+
+1. 打开 [仓库主页](https://github.com/chalmery/gnome-kimpanel-mac-theme)，点击绿色 `Code` 按钮 → `Download ZIP`，解压后进入目录
+
+2. 将下载的 `stylesheet.css`、`panel.png`、`highlight.png` 复制到：
+
+   ```
+   ~/.local/share/gnome-shell/extensions/kimpanel@kde.org/
+   ```
+
+   （文件管理器按 `Ctrl+H` 显示隐藏目录）
+
+3. 将 `org.gnome.shell.extensions.kimpanel.gschema.xml` 复制到 `~/.local/share/glib-2.0/schemas/`，然后在终端执行一次：
+
+   ```bash
+   glib-compile-schemas ~/.local/share/glib-2.0/schemas/
+   ```
+
+> 如果扩展原本就能正常加载，可跳过 schema 这一步。
+
+以上三种方式只需覆盖以下文件，不会替换整个扩展：
+
+- `stylesheet.css` — 候选框样式
+- `panel.png` / `highlight.png` — 背景素材
+- `org.gnome.shell.extensions.kimpanel.gschema.xml` — GSettings schema（修复扩展加载失败）
 
 完成后注销重新登录。
 
