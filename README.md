@@ -27,7 +27,7 @@ cd gnome-kimpanel-mac-theme
 ./install.sh
 ```
 
-### 方式二：手动 cp
+### 方式二：手动
 
 ```bash
 cp stylesheet.css panel.png highlight.png ~/.local/share/gnome-shell/extensions/kimpanel@kde.org/
@@ -46,14 +46,6 @@ glib-compile-schemas ~/.local/share/glib-2.0/schemas/
    ```
 
    （文件管理器按 `Ctrl+H` 显示隐藏目录）
-
-3. 将 `org.gnome.shell.extensions.kimpanel.gschema.xml` 复制到 `~/.local/share/glib-2.0/schemas/`，然后在终端执行一次：
-
-   ```bash
-   glib-compile-schemas ~/.local/share/glib-2.0/schemas/
-   ```
-
-> 如果扩展原本就能正常加载，可跳过 schema 这一步。
 
 以上三种方式只需覆盖以下文件，不会替换整个扩展：
 
