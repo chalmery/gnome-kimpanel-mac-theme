@@ -1,16 +1,41 @@
 /* macOS-light theme for kimpanel */
 
+/*
+ * Outer container — must be fully transparent.
+ * BoxPointer size includes arrow area, so background goes here → tall white bar.
+ */
 .popup-menu-boxpointer.kimpanel-popup-boxpointer {
   -arrow-background-color: transparent;
   -arrow-border-color: transparent;
+  -arrow-border-width: 0px;
+  background-color: transparent;
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
 }
 
+/*
+ * Also strip .popup-menu defaults applied to the same BoxPointer widget.
+ */
+.popup-menu.kimpanel-popup-boxpointer {
+  background-color: transparent;
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Inner content — visual styling lives here */
 .popup-menu-content.kimpanel-popup-content {
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 0px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 0px;
+  margin: 0px;
 }
 
 .kimpanel-label {

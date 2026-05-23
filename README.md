@@ -4,6 +4,8 @@
 
 我把fcitx5-theme-macos的白色主题，让AI分析了主题的风格，让AI更新了这个插件的css配置，你也可以自己让AI写一个符合你需要的样子
 
+![screenshot](assets/image.png)
+
 # AI分析出来的原因
 fcitx5 有两个 UI 模块在竞争渲染：
 
